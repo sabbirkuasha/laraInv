@@ -5,7 +5,7 @@
     <meta charset="utf-8">
 
     <!-- tailwind only -->
-    {{-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> --}}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
