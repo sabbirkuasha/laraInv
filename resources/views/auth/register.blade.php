@@ -1,66 +1,123 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+<!doctype html>
+<html class="no-js" lang="en">
 
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Zoetrope | SignUp</title>
+    <meta name="robots" content="noindex, follow" />
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
 
-        <form method="POST" action="{{ route('register') }}">
-            @csrf
+    <!-- CSS
+ ============================================ -->
 
-            <!-- Name -->
-            <div>
-                <x-label for="name" :value="__('Name')" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ asset('backend/assets/css/vendor/bootstrap.min.css') }} ">
 
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required
-                    autofocus />
+    <!-- Icon Font CSS -->
+    <link rel="stylesheet" href="{{ asset('backend/assets/css/vendor/material-design-iconic-font.min.css') }} ">
+    <link rel="stylesheet" href="{{ asset('backend/assets/css/vendor/font-awesome.min.css') }} ">
+    <link rel="stylesheet" href="{{ asset('backend/assets/css/vendor/themify-icons.css') }} ">
+    <link rel="stylesheet" href="{{ asset('backend/assets/css/vendor/cryptocurrency-icons.css') }} ">
+
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="{{ asset('backend/assets/css/plugins/plugins.css') }} ">
+
+    <!-- Helper CSS -->
+    <link rel="stylesheet" href="{{ asset('backend/assets/css/helper.css') }} ">
+
+    <!-- Main Style CSS -->
+    <link rel="stylesheet" href="{{ asset('backend/assets/css/style.css') }} ">
+
+    <!-- Custom Style CSS Only For Demo Purpose -->
+    <link id="cus-style" rel="stylesheet" href="{{ asset('backend/assets/css/style-primary.css')}}">
+
+</head>
+
+<body class="skin-dark">
+
+    <div class="main-wrapper">
+
+        <!-- Content Body Start -->
+        <div class="content-body m-0 p-0">
+
+            <div class="login-register-wrap">
+                <div class="row">
+
+                    <div class="d-flex align-self-center justify-content-center order-2 order-lg-1 col-lg-5 col-12">
+                        <div class="login-register-form-wrap">
+
+                            <div class="content">
+                                <h1>Sign up</h1>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                            </div>
+
+                            <div class="login-register-form">
+                                <form method="POST" action="{{ route('register') }}">
+                                    @csrf
+                                    <div class="row">
+
+                                        <div class="col-12 mb-20">
+                                            <input id="name" name="name" :value="old('name')" class="form-control" type="text" placeholder="Your Name">
+                                        </div>
+                                        <div class="col-12 mb-20">
+                                            <input id="username" name="username" :value="old('username')" class="form-control" type="text" placeholder="UserName">
+                                        </div>
+                                        <div class="col-12 mb-20">
+                                            <input id="email" class="form-control" type="email" name="email" :value="old('email')" placeholder="Email">
+                                        </div>
+                                        <div class="col-12 mb-20">
+                                            <input id="password" class="form-control" type="password" name="password" placeholder="Password">
+                                        </div>
+                                        <div class="col-12 mb-20">
+                                            <input id="password_confirmation" class="form-control" type="password" name="password_confirmation" placeholder="Retype Password">
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="row justify-content-between">
+                                                <div class="col-auto mb-15">Already have account? <a href="{{route('login')}}">Login Now.</a></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 mt-10">
+                                            <button class="button button-primary button-outline">sign up</button>
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="login-register-bg order-1 order-lg-2 col-lg-7 col-12">
+                        <div class="content">
+                            <h1>Sign up</h1>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        </div>
+                    </div>
+
+                </div>
             </div>
 
-            <!-- User Name -->
-            <div class="mt-4">
-                <x-label for="username" :value="__('username')" />
+        </div><!-- Content Body End -->
 
-                <x-input id="username" class="block mt-1 w-full" type="text" name="username" :value="old('username')"
-                    required autofocus />
-            </div>
+    </div>
 
-            <!-- Email Address -->
-            <div class="mt-4">
-                <x-label for="email" :value="__('Email')" />
+    <!-- JS
+============================================ -->
 
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')"
-                    required />
-            </div>
+    <!-- Global Vendor, plugins & Activation JS -->
+    <script src="{{ asset('backend/assets/js/vendor/modernizr-3.6.0.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/js/vendor/jquery-3.3.1.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/js/vendor/popper.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/js/vendor/bootstrap.min.js') }}"></script>
+    <!--Plugins JS-->
+    <script src="{{ asset('backend/assets/js/plugins/perfect-scrollbar.min.js') }}"></script>
+    <script src="{{ asset('backend/assets/js/plugins/tippy4.min.js.js') }}"></script>
+    <!--Main JS-->
+    <script src="{{ asset('backend/assets/js/main.js') }}"></script>
 
-            <!-- Password -->
-            <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
+</body>
 
-                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required
-                    autocomplete="new-password" />
-            </div>
-
-            <!-- Confirm Password -->
-            <div class="mt-4">
-                <x-label for="password_confirmation" :value="__('Confirm Password')" />
-
-                <x-input id="password_confirmation" class="block mt-1 w-full" type="password"
-                    name="password_confirmation" required />
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a>
-
-                <x-button class="ml-4">
-                    {{ __('Register') }}
-                </x-button>
-            </div>
-        </form>
-    </x-auth-card>
-</x-guest-layout>
+</html>

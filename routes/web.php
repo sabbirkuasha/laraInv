@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,3 +31,9 @@ Route::get('/dashboard', function () {
 })->middleware(['auth','verified'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+
+// All route of admin
+
+Route::controller(AdminController::class)->group(function(){
+    Route::get('/admin/logout', 'destroy')->name('admin.logout');
+});

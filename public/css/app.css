@@ -2869,11 +2869,20 @@ body[dir="rtl"] .checkbox:checked,
 .z-50 {
   z-index: 50;
 }
+.order-2 {
+  order: 2;
+}
+.order-1 {
+  order: 1;
+}
 .col-auto {
   grid-column: auto;
 }
 .m-auto {
   margin: auto;
+}
+.m-0 {
+  margin: 0px;
 }
 .mx-auto {
   margin-left: auto;
@@ -2905,6 +2914,9 @@ body[dir="rtl"] .checkbox:checked,
 }
 .ml-3 {
   margin-left: 0.75rem;
+}
+.mt-10 {
+  margin-top: 2.5rem;
 }
 .mt-6 {
   margin-top: 1.5rem;
